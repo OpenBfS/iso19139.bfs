@@ -60,7 +60,8 @@
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 			<xs:sequence>
-				<xs:element name="inspireID" type="gco:CharacterString_PropertyType"/>				
+				<xs:element name="legendTitle" type="gco:CharacterString_PropertyType"/>
+				<xs:element name="printTitle" type="gco:CharacterString_PropertyType"/>				
 				<xs:element name="layerType" type="bfs:MD_LayerType_PropertyType" />
 				<xs:element ref="bfs:wfs" minOccurs="0" />
 				<xs:element ref="bfs:download" minOccurs="0"/>
@@ -315,6 +316,7 @@
 					<xs:element name="allowedValues" type="gco:CharacterString_PropertyType"/>
 					<xs:element name="operator" type="gco:CharacterString_PropertyType"/>
 					<xs:element name="allowMultipleSelect" type="gco:Boolean_PropertyType"/>
+                                        <xs:element name="encodeInViewParams" type="gco:Boolean_PropertyType"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

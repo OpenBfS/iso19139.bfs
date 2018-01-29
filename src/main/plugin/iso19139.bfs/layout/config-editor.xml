@@ -9,7 +9,7 @@
   xmlns:gml="http://www.opengis.net/gml"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:bfs="http://geonetwork.org/bfs">
-
+    
   <!-- Form field type configuration. Default is text. -->
   <fields>
     <for name="gmd:abstract" use="textarea"/>
@@ -108,7 +108,7 @@
     </for>
 
     <for name="bfs:value" use="textarea" />
-
+    
   </fields>
 
 
@@ -149,10 +149,6 @@
     <name>gml:verticalCS</name>
     <name>gml:verticalDatum</name>
     <name>gmd:identifier</name>
-    <!-- FIXME not sure if this is ok -->
-    <name>bfs:legendTitle</name>
-    <!-- FIXME was this the right place?? -->
-    <name>bfs:download</name>
     <name>bfs:download</name>
     <name>bfs:wms</name>
     <name>bfs:wfs</name>
@@ -260,7 +256,7 @@
 
   <!-- View configuration -->
   <views>
-    <!-- TODO: Add option to configure if view should be displayed or not
+    <!-- TODO: Add option to configure if view should be displayed or not 
     based on xpath expression ? -->
 
     <view name="default">
@@ -270,7 +266,10 @@
             xpath="/bfs:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title"/>
 
           <field
-            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:inspireID"/>
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:legendTitle"/>
+
+          <field
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:printTitle"/>
 
           <field
             xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:layerType" or="layerType" in="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer"/>
@@ -388,8 +387,8 @@
           <field xpath="/bfs:MD_Metadata/gmd:featureAttribute"/>
         </section>
       </tab>-->
-
-      <!-- Elements that should not use the "flat" mode -->
+      
+      <!-- Elements that should not use the "flat" mode --> 
       <!--<flatModeExceptions>
         <for name="gmd:descriptiveKeywords" />
         <for name="gmd:keyword"/>

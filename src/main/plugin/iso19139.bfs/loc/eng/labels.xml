@@ -19,8 +19,13 @@
     <description></description>
   </element>
 
-  <element name="bfs:inspireID">
-    <label>INSPIRE Identifier</label>
+  <element name="bfs:legendTitle">
+    <label>Legend Title</label>
+    <description></description>
+  </element>
+
+  <element name="bfs:printTitle">
+    <label>Print Title</label>
     <description></description>
   </element>
 
@@ -265,6 +270,11 @@
 
   <element name="bfs:allowMultipleSelect">
     <label>Allow Multiple Select</label>
+    <description></description>
+  </element>
+
+  <element name="bfs:encodeInViewParams">
+    <label>Encode In View Params</label>
     <description></description>
   </element>
 

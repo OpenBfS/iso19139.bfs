@@ -60,9 +60,9 @@
 	</gmd:identificationInfo>
 	<bfs:layerInformation>
 		<bfs:MD_Layer>
-			<bfs:inspireID gco:nilReason="missing">
+			<bfs:legendTitle gco:nilReason="missing">
 				<gco:CharacterString></gco:CharacterString>
-			</bfs:inspireID>
+			</bfs:legendTitle>
 			<bfs:layerType>
 				<bfs:MD_WMSLayerType>
 					<bfs:URL>

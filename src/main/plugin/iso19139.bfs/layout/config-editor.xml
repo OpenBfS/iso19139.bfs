@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../config-editor.xsd"
+  xmlns:gn="http://www.fao.org/geonetwork"
+  xmlns:gco="http://www.isotc211.org/2005/gco"
+  xmlns:gmd="http://www.isotc211.org/2005/gmd"
+  xmlns:gmx="http://www.isotc211.org/2005/gmx"
+  xmlns:srv="http://www.isotc211.org/2005/srv"
+  xmlns:gml="http://www.opengis.net/gml"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:bfs="http://geonetwork.org/bfs">
+    
+  <!-- Form field type configuration. Default is text. -->
+  <fields>
+    <for name="gmd:abstract" use="textarea"/>
+    <for name="gmd:checkPointDescription" use="textarea"/>
+    <for name="gmd:credit" use="textarea"/>
+    <for name="gmd:description" use="textarea"/>
+    <for name="gmd:evaluationMethodDescription" use="textarea"/>
+    <for name="gmd:explanation" use="textarea"/>
+    <for name="gmd:handlingDescription" use="textarea"/>
+    <for name="gmd:maintenanceNote" use="textarea"/>
+    <for name="gmd:measureDescription" use="textarea"/>
+    <for name="gmd:purpose" use="textarea"/>
+    <for name="gmd:orderingInstructions" use="textarea"/>
+    <for name="gmd:otherConstraints" use="textarea"/>
+    <for name="gmd:statement" use="textarea"/>
+    <for name="gmd:supplementalInformation" use="textarea"/>
+    <for name="gmd:specificUsage" use="textarea"/>
+    <for name="gmd:userNote" use="textarea"/>
+    <for name="gmd:useLimitation" use="textarea"/>
+
+
+    <for name="gco:Distance" use="number"/>
+    <for name="gco:Decimal" use="number"/>
+    <for name="gco:Integer" use="number"/>
+    <for name="gco:Real" use="number"/>
+    <for name="gco:Boolean" use="checkbox"/>
+
+
+    <for name="gco:Date" use="data-gn-date-picker"/>
+    <for name="gco:DateTime" use="data-gn-date-picker"/>
+
+
+
+    <!-- gmx:FileName/@src attribute -->
+    <for name="src" use="data-gn-logo-selector"/>
+
+    <for name="gmd:electronicMailAddress" use="email"/>
+
+    <for name="gmd:language" use="data-gn-language-picker"/>
+    <for name="gmd:languageCode" use="data-gn-language-picker"/>
+
+    <for name="gmd:country" use="data-gn-country-picker"/>
+
+    <for name="gmd:referenceSystemInfo" addDirective="data-gn-crs-selector"/>
+
+
+    <for name="gmd:contact" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+              data-template-add-action="true"
+              data-template-type="contact"
+              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:pointOfContact" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+              data-template-add-action="true"
+              data-template-type="contact"
+              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:distributorContact" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+              data-template-add-action="true"
+              data-template-type="contact"
+              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:processor" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+              data-template-add-action="true"
+              data-template-type="contact"
+              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:citedResponsibleParty" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+              data-template-add-action="true"
+              data-template-type="contact"
+              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+
+
+    <!-- Example configuration: Add onLine source from subtemplate
+    <for name="gmd:onLine" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+              data-template-add-action="true"
+              data-template-type="onLine"
+              data-filter='{"_root": "gmd:CI_OnlineResource"}'/>
+    </for>
+    -->
+    <for name="gmd:descriptiveKeywords" addDirective="data-gn-thesaurus-selector">
+      <!--
+      Example of configuration to disable free text keywords in the thesaurus selector
+      <directiveAttributes data-allow-free-text-keywords="false" />
+
+      To restrict the list of thesaurus allowed, set the include attribute
+      for the directive.
+      <directiveAttributes data-include="external.theme.inspire-theme,external.place.regions"/>
+      -->
+    </for>
+
+    <for name="bfs:value" use="textarea" />
+    
+  </fields>
+
+
+  <fieldsWithFieldset>
+    <name>bfs:MD_Metadata</name>
+    <name>gmd:identificationInfo</name>
+    <name>gmd:distributionInfo</name>
+    <name>gmd:portrayalCatalogueInfo</name>
+    <name>gmd:portrayalCatalogueCitation</name>
+    <name>gmd:thesaurusName</name>
+    <name>gmd:spatialRepresentationInfo</name>
+    <name>gmd:pointOfContact</name>
+    <name>gmd:contact</name>
+    <name>gmd:citedResponsibleParty</name>
+    <name>gmd:dataQualityInfo</name>
+    <name>gmd:contentInfo</name>
+    <name>gmd:distributionFormat</name>
+    <name>gmd:referenceSystemInfo</name>
+    <name>gmd:spatialResolution</name>
+    <name>gmd:offLine</name>
+    <name>gmd:onLine</name>
+    <name>gmd:address</name>
+    <name>gmd:projection</name>
+    <name>gmd:ellipsoid</name>
+    <name>gmd:attributes</name>
+    <name>gmd:verticalCRS</name>
+    <name>gmd:geographicBox</name>
+    <name>gmd:EX_TemporalExtent</name>
+    <name>gmd:MD_Distributor</name>
+    <name>srv:containsOperations</name>
+    <name>srv:SV_CoupledResource</name>
+    <name>gmd:metadataConstraints</name>
+    <name>gmd:aggregationInfo</name>
+    <name>gmd:processStep</name>
+    <name>gmd:lineage</name>
+    <name>gmd:centerPoint</name>
+    <name>gmd:verticalCRS</name>
+    <name>gml:verticalCS</name>
+    <name>gml:verticalDatum</name>
+    <name>gmd:identifier</name>
+    <name>bfs:download</name>
+    <name>bfs:wms</name>
+    <name>bfs:wfs</name>
+    <name>bfs:olProperty</name>
+    <name>bfs:timeSeriesChartProperty</name>
+    <name>bfs:barChartProperty</name>
+    <name>bfs:TimeRangeFilter</name>
+    <name>bfs:startDate</name>
+    <name>bfs:endDate</name>
+    <name>bfs:MD_ValueFilter</name>
+    <name>bfs:MD_GeoExtentFilter</name>
+    <name>bfs:MD_RodosFilter</name>
+    <name>bfs:MD_PointInTimeFilter</name>
+    <name>bfs:MD_TimeRangeFilter</name>
+    <name>bfs:layerType</name>
+    <name>bfs:MD_WMSLayerType</name>
+    <name>bfs:MD_WMTSLayerType</name>
+    <name>bfs:MD_VectorLayerType</name>
+    <name>bfs:date</name>
+    <name>bfs:minDate</name>
+    <name>bfs:maxDate</name>
+    <name>bfs:defaultValue</name>
+    <name>bfs:defaultStartValue</name>
+    <name>bfs:defaultEndValue</name>
+  </fieldsWithFieldset>
+
+  <multilingualFields>
+    <!-- In multilingual mode, define which mode
+    the widget should have. If expanded, then one
+    field per language is displayed. -->
+    <expanded>
+      <name>gmd:title</name>
+      <name>gmd:abstract</name>
+    </expanded>
+    <!-- All fields in ISO could be multilingual.
+    Define element to exclude.
+
+      The name element can optionally have ancestor, child or parent attributes to
+      further restrict the exclusion.  For example if some gmd:code elements are
+      multilingual but others are not then adding a parent/child/parent attribute
+      can restrict the exclude to only some elements.
+
+      For example:
+        <name ancestor="gmd:thesaurusName">gmd:code</name>
+        or
+        <name child="gmx:Anchor">gmd:code</name>
+    -->
+    <exclude>
+      <name>gmd:identifier</name>
+      <name>gmd:metadataStandardName</name>
+      <name>gmd:metadataStandardVersion</name>
+      <name>gmd:hierarchyLevelName</name>
+      <name>gmd:dataSetURI</name>
+      <name>gmd:postalCode</name>
+      <name>gmd:city</name>
+      <name>gmd:language</name>
+      <name>gmd:administrativeArea</name>
+      <name>gmd:voice</name>
+      <name>gmd:facsimile</name>
+      <name>gmd:dataset</name>
+      <name>gmd:other</name>
+      <name>gmd:hoursOfService</name>
+      <name>gmd:applicationProfile</name>
+      <name>gmd:page</name>
+      <name>gmd:date</name>
+      <name>gmd:linkage</name>
+      <name>gmd:fileName</name>
+      <name>gmd:protocol</name>
+      <name>gmd:fileType</name>
+      <name>gmd:unitsOfDistribution</name>
+      <name>gmd:amendmentNumber</name>
+      <name>gmd:specification</name>
+      <name>gmd:fileDecompressionTechnique</name>
+      <name>gmd:turnaround</name>
+      <name>gmd:fees</name>
+      <name>gmd:userDeterminedLimitations</name>
+      <name>gmd:codeSpace</name>
+      <name>gmd:version</name>
+      <name>gmd:edition</name>
+      <name>gmd:ISBN</name>
+      <name>gmd:ISSN</name>
+      <name>gmd:errorStatistic</name>
+      <name>gmd:schemaAscii</name>
+      <name>gmd:softwareDevelopmentFileFormat</name>
+      <name>gmd:shortName</name>
+      <name>gmd:condition</name>
+      <name>gmd:maximumOccurence</name>
+      <name>gmd:domainValue</name>
+      <name>gmd:densityUnits</name>
+      <name>gmd:descriptor</name>
+      <name>gmd:denominator</name>
+      <name>gmd:classificationSystem</name>
+      <name>gmd:checkPointDescription</name>
+      <name>gmd:transformationDimensionDescription</name>
+      <name>gmd:orientationParameterDescription</name>
+      <name>gmd:distance</name>
+      <name>srv:name</name>
+      <name>srv:invocationName</name>
+      <name>srv:serviceTypeVersion</name>
+      <name>srv:operationName</name>
+      <name>srv:identifier</name>
+    </exclude>
+  </multilingualFields>
+
+
+  <!-- View configuration -->
+  <views>
+    <!-- TODO: Add option to configure if view should be displayed or not 
+    based on xpath expression ? -->
+
+    <view name="default">
+      <tab id="default" default="true" mode="flat">
+        <section name="bfs:LayerInformation">
+          <field
+            xpath="/bfs:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title"/>
+
+          <field
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:inspireID"/>
+
+          <field
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:layerType" or="layerType" in="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer"/>
+
+          <field
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:download" />
+          <action type="add"
+                  name="download" or="download"
+                  in="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer">
+            <template>
+              <snippet>
+                <bfs:download>
+                  <bfs:URL>
+                    <bfs:host gco:nilReason="missing">
+                      <gco:CharacterString></gco:CharacterString>
+                    </bfs:host>
+                    <bfs:path gco:nilReason="missing">
+                      <gco:CharacterString></gco:CharacterString>
+                    </bfs:path>
+                  </bfs:URL>
+                  <bfs:filterFieldStart gco:nilReason="missing">
+                    <gco:CharacterString />
+                  </bfs:filterFieldStart>
+                  <bfs:filterFieldEnd gco:nilReason="missing">
+                    <gco:CharacterString />
+                  </bfs:filterFieldEnd>
+                </bfs:download>
+              </snippet>
+            </template>
+          </action>
+
+          <field
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:wfs"/>
+          <action type="add"
+                  name="wfs" or="wfs"
+                  in="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer">
+            <template>
+              <snippet>
+                <bfs:wfs>
+                  <bfs:URL>
+                    <bfs:host gco:nilReason="missing">
+                      <gco:CharacterString/>
+                    </bfs:host>
+                    <bfs:path gco:nilReason="missing">
+                      <gco:CharacterString/>
+                    </bfs:path>
+                  </bfs:URL>
+                </bfs:wfs>
+              </snippet>
+            </template>
+          </action>
+        </section>
+
+        <section name="bfs:filter">
+          <field
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:filter" or="filter" in="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer"/>
+        </section>
+
+        <section name="bfs:olProperties">
+          <field
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:olProperty"  or="olProperty" in="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer"/>
+          />
+        </section>
+
+        <section name="bfs:timeSeriesChartProperties">
+          <field
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:timeSeriesChartProperty"  or="timeSeriesChartProperty" in="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer"/>
+          />
+        </section>
+
+        <section name="bfs:barChartProperties">
+          <field
+            xpath="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer/bfs:barChartProperty"  or="barChartProperty" in="/bfs:MD_Metadata/bfs:layerInformation/bfs:MD_Layer"/>
+          />
+        </section>
+
+
+        <section name="bfs:MD_Metadata">
+          <field xpath="/bfs:MD_Metadata/gmd:fileIdentifier"/>
+          <field xpath="/bfs:MD_Metadata/gmd:dateStamp"/>
+        </section>
+      </tab>
+
+      <!-- Elements that should not use the "flat" mode -->
+      <!--<flatModeExceptions>
+        <for name="bfs:defaultValue"/>
+      </flatModeExceptions>-->
+
+      <!--<tab id="default" default="true" mode="fla"true" mode="flat">
+        <section xpath="/bfs:MD_Metadata/gmd:identificationInfo"/>
+        <section xpath="/bfs:MD_Metadata/gmd:referenceSystemInfo"/>
+        <section xpath="/bfs:MD_Metadata/gmd:spatialRepresentationInfo"/>
+        <section xpath="/bfs:MD_Metadata/gmd:distributionInfo"/>
+        <section xpath="/bfs:MD_Metadata/gmd:dataQualityInfo"/>
+        <section name="bfs:MD_Metadata">
+          <field xpath="/bfs:MD_Metadata/gmd:fileIdentifier"/>
+          <field xpath="/bfs:MD_Metadata/gmd:language" or="language" in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:characterSet"/>
+          <field xpath="/bfs:MD_Metadata/gmd:parentIdentifier" or="parentIdentifier"
+                 in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:hierarchyLevel" or="hierarchyLevel"
+                 in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:hierarchyLevelName" or="hierarchyLevelName"
+                 in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:dateStamp"/>
+          <field xpath="/bfs:MD_Metadata/gmd:metadataStandardName"/>
+          <field xpath="/bfs:MD_Metadata/gmd:metadataStandardVersion"/>
+          <field xpath="/bfs:MD_Metadata/gmd:contact" or="contact" in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:dataSetURI" or="dataSetURI" in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:locale" or="locale" in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:series"/>
+          <field xpath="/bfs:MD_Metadata/gmd:describes"/>
+          <field xpath="/bfs:MD_Metadata/gmd:propertyType"/>
+          <field xpath="/bfs:MD_Metadata/gmd:featureType"/>
+          <field xpath="/bfs:MD_Metadata/gmd:featureAttribute"/>
+        </section>
+      </tab>-->
+      
+      <!-- Elements that should not use the "flat" mode --> 
+      <!--<flatModeExceptions>
+        <for name="gmd:descriptiveKeywords" />
+        <for name="gmd:keyword"/>
+        <for name="gmd:spatialResolution"/>
+        <for name="gmd:pointOfContact"/>
+        <for name="gmd:distributor"/>
+        <for name="gmd:contact"/>
+        <for name="gmd:processor"/>
+        <for name="gmd:citedResponsibleParty"/>
+        <for name="gmd:topicCategory"/>
+      </flatModeExceptions>-->
+
+      <!--
+      To configure the type of transformations
+      or the number of keyword allowed for e
+      thesaurus define a specific configuration:
+
+      eg. only 2 INSPIRE themes with Anchor.
+
+      <thesaurusList>
+        <thesaurus key="external.theme.inspire-theme"
+                   maxtags="2"
+                   transformations="to-iso19139-keyword-with-anchor"/>
+      </thesaurusList>
+      -->
+    </view>
+    <view name="advanced">
+      <tab id="identificationInfo" default="true">
+        <section xpath="/bfs:MD_Metadata/gmd:identificationInfo" or="identificationInfo"
+                 in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="distributionInfo">
+        <section xpath="/bfs:MD_Metadata/gmd:distributionInfo" or="distributionInfo"
+                 in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="dataQualityInfo">
+        <section xpath="/bfs:MD_Metadata/gmd:dataQualityInfo" or="dataQualityInfo"
+                 in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="spatialRepresentationInfo">
+        <section xpath="/bfs:MD_Metadata/gmd:spatialRepresentationInfo"
+                 or="spatialRepresentationInfo" in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="referenceSystemInfo">
+        <section xpath="/bfs:MD_Metadata/gmd:referenceSystemInfo" or="referenceSystemInfo"
+                 in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="contentInfo" toggle="true">
+        <section xpath="/bfs:MD_Metadata/gmd:contentInfo" or="contentInfo" in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="portrayalCatalogueInfo" toggle="true">
+        <section xpath="/bfs:MD_Metadata/gmd:portrayalCatalogueInfo" or="portrayalCatalogueInfo"
+                 in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="metadata">
+        <section name="metadata">
+          <field xpath="/bfs:MD_Metadata/gmd:fileIdentifier"/>
+          <field xpath="/bfs:MD_Metadata/gmd:language" or="language" in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:characterSet"/>
+          <field xpath="/bfs:MD_Metadata/gmd:parentIdentifier" or="parentIdentifier"
+                 in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:hierarchyLevel" or="hierarchyLevel"
+                 in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:hierarchyLevelName" or="hierarchyLevelName"
+                 in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:dateStamp"/>
+          <field xpath="/bfs:MD_Metadata/gmd:metadataStandardName"/>
+          <field xpath="/bfs:MD_Metadata/gmd:metadataStandardVersion"/>
+          <field xpath="/bfs:MD_Metadata/gmd:contact" or="contact" in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:dataSetURI" or="dataSetURI" in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:locale" or="locale" in="/bfs:MD_Metadata"/>
+          <field xpath="/bfs:MD_Metadata/gmd:series"/>
+          <field xpath="/bfs:MD_Metadata/gmd:describes"/>
+          <field xpath="/bfs:MD_Metadata/gmd:propertyType"/>
+          <field xpath="/bfs:MD_Metadata/gmd:featureType"/>
+          <field xpath="/bfs:MD_Metadata/gmd:featureAttribute"/>
+        </section>
+      </tab>
+      <tab id="metadataConstraints" toggle="true">
+        <section xpath="/bfs:MD_Metadata/gmd:metadataConstraints" or="metadataConstraints"
+                 in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="metadataMaintenance" toggle="true">
+        <section xpath="/bfs:MD_Metadata/gmd:metadataMaintenance" or="metadataMaintenance"
+                 in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="applicationSchemaInfo" toggle="true">
+        <section xpath="/bfs:MD_Metadata/gmd:applicationSchemaInfo" or="applicationSchemaInfo"
+                 in="/bfs:MD_Metadata"/>
+      </tab>
+    </view>
+    <view name="xml">
+      <tab id="xml" default="true"/>
+    </view>
+  </views>
+</editor>

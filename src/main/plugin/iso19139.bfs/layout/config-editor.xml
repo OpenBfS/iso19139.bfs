@@ -9,7 +9,7 @@
   xmlns:gml="http://www.opengis.net/gml"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:bfs="http://geonetwork.org/bfs">
-    
+
   <!-- Form field type configuration. Default is text. -->
   <fields>
     <for name="gmd:abstract" use="textarea"/>
@@ -108,7 +108,7 @@
     </for>
 
     <for name="bfs:value" use="textarea" />
-    
+
   </fields>
 
 
@@ -256,10 +256,20 @@
 
   <!-- View configuration -->
   <views>
-    <!-- TODO: Add option to configure if view should be displayed or not 
+    <!-- TODO: Add option to configure if view should be displayed or not
     based on xpath expression ? -->
 
     <view name="default">
+      <sidePanel>
+        <directive data-gn-onlinesrc-list=""/>
+        <directive gn-geo-publisher=""
+                   data-ng-if="gnCurrentEdit.geoPublisherConfig"
+                   data-config="{{gnCurrentEdit.geoPublisherConfig}}"
+                   data-lang="lang"/>
+        <directive data-gn-validation-report=""/>
+        <directive data-gn-suggestion-list=""/>
+        <directive data-gn-need-help="user-guide/describing-information/creating-metadata.html"/>
+      </sidePanel>
       <tab id="default" default="true" mode="flat">
         <section name="bfs:LayerInformation">
           <field
@@ -387,8 +397,8 @@
           <field xpath="/bfs:MD_Metadata/gmd:featureAttribute"/>
         </section>
       </tab>-->
-      
-      <!-- Elements that should not use the "flat" mode --> 
+
+      <!-- Elements that should not use the "flat" mode -->
       <!--<flatModeExceptions>
         <for name="gmd:descriptiveKeywords" />
         <for name="gmd:keyword"/>

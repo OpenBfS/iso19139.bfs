@@ -28,8 +28,8 @@
   <metadataConstraints>Md. constraintes</metadataConstraints>
   <metadataMaintenance>Md. maintenance</metadataMaintenance>
   <applicationSchemaInfo>Extension</applicationSchemaInfo>
-  
-  
+  <layerInformation>Layer information</layerInformation>
+
   <!-- INSPIRE view labels and help -->
   <url>Localisateur de la ressource</url>
   <identifier>Identificateur de ressource unique</identifier>

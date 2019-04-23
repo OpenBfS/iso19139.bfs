@@ -179,10 +179,10 @@
     <!-- In multilingual mode, define which mode
     the widget should have. If expanded, then one
     field per language is displayed. -->
-    <expanded>
+    <!--<expanded>
       <name>gmd:title</name>
       <name>gmd:abstract</name>
-    </expanded>
+    </expanded>-->
     <!-- All fields in ISO could be multilingual.
     Define element to exclude.
 
@@ -197,6 +197,8 @@
         <name child="gmx:Anchor">gmd:code</name>
     -->
     <exclude>
+      <!--<name>gmd:title</name>-->
+      <name>gmd:abstract</name>
       <name>gmd:identifier</name>
       <name>gmd:metadataStandardName</name>
       <name>gmd:metadataStandardVersion</name>
@@ -250,6 +252,42 @@
       <name>srv:serviceTypeVersion</name>
       <name>srv:operationName</name>
       <name>srv:identifier</name>
+
+      <!-- Bfs custom elements -->
+      <!--<name>bfs:legendTitle</name>-->
+      <name>bfs:printTitle</name>
+      <name>bfs:host</name>
+      <name>bfs:version</name>
+      <name>bfs:path</name>
+      <name>bfs:layer</name>
+      <name>bfs:styles</name>
+      <name>bfs:format</name>
+      <name>bfs:tilematrixset</name>
+      <name>bfs:filterFieldStart</name>
+      <name>bfs:filterFieldEnd</name>
+      <name>bfs:propertyName</name>
+      <name>bfs:transparent</name>
+      <name>bfs:paramName</name>
+      <name>bfs:paramAlias</name>
+      <name>bfs:defaultValue</name>
+      <name>bfs:allowedValues</name>
+      <name>bfs:operator</name>
+      <name>bfs:allowMultipleSelect</name>
+      <name>bfs:encodeInViewParams</name>
+      <name>bfs:interval</name>
+      <name>bfs:unit</name>
+      <name>bfs:maxDuration</name>
+      <name>bfs:minDate</name>
+      <name>bfs:maxDate</name>
+      <name>bfs:defaultStartValue</name>
+      <name>bfs:defaultEndValue</name>
+      <name>bfs:defaultEndValue</name>
+      <name>bfs:TimeFormat</name>
+      <name>bfs:TimeInstant</name>
+
+      <!-- Uncomment to make bfs:propertyValue from these ancestors non-multilingual -->
+      <!--<name ancestor="bfs:barChartProperty">bfs:propertyValue</name>
+      <name ancestor="bfs:timeSeriesChartProperty">bfs:propertyValue</name>-->
     </exclude>
   </multilingualFields>
 
@@ -431,6 +469,10 @@
     <view name="advanced">
       <tab id="identificationInfo" default="true">
         <section xpath="/bfs:MD_Metadata/gmd:identificationInfo" or="identificationInfo"
+                 in="/bfs:MD_Metadata"/>
+      </tab>
+      <tab id="layerInformation" >
+        <section xpath="/bfs:MD_Metadata/bfs:layerInformation" or="layerInformation"
                  in="/bfs:MD_Metadata"/>
       </tab>
       <tab id="distributionInfo">

@@ -7,6 +7,10 @@
 
     <xsl:import href="../iso19139/update-fixed-info.xsl"/>
 
+    <!-- Override variable with schema config-editor.xml, otherwise uses the one from iso19139 -->
+    <xsl:variable name="editorConfig"
+                  select="document('layout/config-editor.xml')"/>
+
     <xsl:template match="bfs:MD_Metadata">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>

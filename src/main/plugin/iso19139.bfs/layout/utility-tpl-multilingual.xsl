@@ -5,6 +5,8 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema" 
                 exclude-result-prefixes="#all">
 
+  <xsl:import href="../../iso19139/layout/utility-tpl-multilingual.xsl"/>
+
   <!-- Get the main metadata languages -->
   <xsl:template name="get-iso19139.bfs-language">
     <xsl:call-template name="get-iso19139-language"/>

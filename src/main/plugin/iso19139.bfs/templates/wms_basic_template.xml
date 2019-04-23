@@ -29,6 +29,25 @@
 	<gmd:metadataStandardVersion>
 		<gco:CharacterString>1.0</gco:CharacterString>
 	</gmd:metadataStandardVersion>
+	<gmd:locale>
+		<gmd:PT_Locale id="DE">
+			<gmd:languageCode>
+				<gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="ger"/>
+			</gmd:languageCode>
+			<gmd:characterEncoding/>
+		</gmd:PT_Locale>
+	</gmd:locale>
+	<gmd:locale>
+		<gmd:PT_Locale id="EN">
+			<gmd:languageCode>
+				<gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+			</gmd:languageCode>
+			<gmd:characterEncoding>
+				<gmd:MD_CharacterSetCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+										 codeListValue="utf8"/>
+			</gmd:characterEncoding>
+		</gmd:PT_Locale>
+	</gmd:locale>
 	<gmd:identificationInfo>
 		<gmd:MD_DataIdentification>
 			<gmd:citation>

@@ -30,7 +30,8 @@
   <metadataConstraints>Md. constraints</metadataConstraints>
   <metadataMaintenance>Md. maintenance</metadataMaintenance>
   <applicationSchemaInfo>Schema info</applicationSchemaInfo>
-  
+  <layerInformation>Layer information</layerInformation>
+
   <!-- INSPIRE view labels and help -->
   <url>Online resource</url>
   <identifier>Resource identifier</identifier>

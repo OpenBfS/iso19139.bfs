@@ -197,8 +197,6 @@
         <name child="gmx:Anchor">gmd:code</name>
     -->
     <exclude>
-      <!--<name>gmd:title</name>-->
-      <name>gmd:abstract</name>
       <name>gmd:identifier</name>
       <name>gmd:metadataStandardName</name>
       <name>gmd:metadataStandardVersion</name>
@@ -254,8 +252,6 @@
       <name>srv:identifier</name>
 
       <!-- Bfs custom elements -->
-      <!--<name>bfs:legendTitle</name>-->
-      <name>bfs:printTitle</name>
       <name>bfs:host</name>
       <name>bfs:version</name>
       <name>bfs:path</name>

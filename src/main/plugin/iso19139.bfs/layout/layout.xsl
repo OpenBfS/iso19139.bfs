@@ -47,8 +47,6 @@
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
-    <xsl:message>mode-iso19139.bfs Visit all XML tree recursively: <xsl:value-of select="name()" /></xsl:message>
-
     <xsl:apply-templates mode="mode-iso19139" select=".">
       <xsl:with-param name="schema" select="$schema"/>
       <xsl:with-param name="labels" select="$labels"/>
@@ -59,8 +57,6 @@
   <xsl:template mode="mode-iso19139.bfs" match="bfs:*[bfs:*]">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
-
-    <xsl:message>mode-iso19139.bfs Visit all XML tree recursively bfs with bfs elements: <xsl:value-of select="name()" /></xsl:message>
 
     <xsl:apply-templates mode="mode-iso19139.bfs" select="*|@*">
       <xsl:with-param name="schema" select="$schema"/>

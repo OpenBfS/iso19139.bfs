@@ -264,9 +264,7 @@
       <name>bfs:propertyName</name>
       <name>bfs:transparent</name>
       <name>bfs:paramName</name>
-      <name>bfs:paramAlias</name>
       <name>bfs:defaultValue</name>
-      <name>bfs:allowedValues</name>
       <name>bfs:operator</name>
       <name>bfs:allowMultipleSelect</name>
       <name>bfs:encodeInViewParams</name>

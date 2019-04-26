@@ -13,8 +13,7 @@
 
   <xsl:include href="utility-fn.xsl"/>
   <xsl:include href="utility-tpl.xsl"/>
-  <xsl:include href="layout-custom-fields.xsl"/>
-  <xsl:include href="layout-custom-fields-date.xsl"/>
+
 
   <!-- Ignore all gn element -->
   <xsl:template mode="mode-iso19139.bfs"
@@ -46,10 +45,14 @@
   <xsl:template mode="mode-iso19139.bfs" match="gmd:*|gmx:*|gml:*|srv:*|gts:*|bfs:*[not(bfs:*)]">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
+    <xsl:param name="refToDelete" required="no"/>
+    <xsl:param name="overrideLabel" required="no"/>
 
     <xsl:apply-templates mode="mode-iso19139" select=".">
       <xsl:with-param name="schema" select="$schema"/>
       <xsl:with-param name="labels" select="$labels"/>
+      <xsl:with-param name="refToDelete" select="$refToDelete"/>
+      <xsl:with-param name="overrideLabel" select="$overrideLabel"/>
     </xsl:apply-templates>
   </xsl:template>
 
@@ -57,10 +60,14 @@
   <xsl:template mode="mode-iso19139.bfs" match="bfs:*[bfs:*]">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
+    <xsl:param name="refToDelete" required="no"/>
+    <xsl:param name="overrideLabel" required="no"/>
 
     <xsl:apply-templates mode="mode-iso19139.bfs" select="*|@*">
       <xsl:with-param name="schema" select="$schema"/>
       <xsl:with-param name="labels" select="$labels"/>
+      <xsl:with-param name="refToDelete" select="$refToDelete"/>
+      <xsl:with-param name="overrideLabel" select="$overrideLabel"/>
     </xsl:apply-templates>
   </xsl:template>
 
@@ -81,10 +88,14 @@
       *[namespace-uri(.) != $gnUri and $isFlatMode = false() and gmd:* and not(gco:CharacterString) and not(gmd:URL)]">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
+    <xsl:param name="refToDelete" required="no"/>
+    <xsl:param name="overrideLabel" required="no"/>
 
     <xsl:apply-templates mode="mode-iso19139" select=".">
       <xsl:with-param name="schema" select="$schema" />
       <xsl:with-param name="labels" select="$labels" />
+      <xsl:with-param name="refToDelete" select="$refToDelete"/>
+      <xsl:with-param name="overrideLabel" select="$overrideLabel"/>
     </xsl:apply-templates>
   </xsl:template>
 
@@ -129,6 +140,7 @@
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="overrideLabel" select="''" required="no"/>
     <xsl:param name="refToDelete" required="no"/>
+    <xsl:param name="config" required="no"/>
 
     <xsl:variable name="elementName" select="name()"/>
 
@@ -298,8 +310,10 @@
       <xsl:with-param name="xpath" select="$xpath"/>
       <xsl:with-param name="attributesSnippet" select="$attributes"/>
       <xsl:with-param name="type"
-                      select="gn-fn-metadata:getFieldType($editorConfig, name(),
-        name($theElement))"/>
+                      select="if ($config and $config/@use != '')
+                              then $config/@use
+                              else gn-fn-metadata:getFieldType($editorConfig, name(),
+        name($theElement), $xpath)"/>
       <xsl:with-param name="name" select="$theElement/gn:element/@ref"/>
       <xsl:with-param name="editInfo" select="$theElement/gn:element"/>
       <xsl:with-param name="parentEditInfo"

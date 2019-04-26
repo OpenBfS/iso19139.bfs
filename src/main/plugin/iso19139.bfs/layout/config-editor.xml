@@ -30,6 +30,8 @@
     <for name="gmd:userNote" use="textarea"/>
     <for name="gmd:useLimitation" use="textarea"/>
 
+    <for name="gts:TM_PeriodDuration" use="data-gn-field-duration-div"/>
+    <for name="gml:duration" use="data-gn-field-duration-div"/>
 
     <for name="gco:Distance" use="number"/>
     <for name="gco:Decimal" use="number"/>

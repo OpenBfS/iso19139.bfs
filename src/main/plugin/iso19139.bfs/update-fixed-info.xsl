@@ -124,7 +124,23 @@
         <xsl:when test="not($isMultilingual) or
                         $excluded = true()">
           <!-- Copy gco:CharacterString only. PT_FreeText are removed if not multilingual. -->
-          <xsl:apply-templates select="gco:CharacterString"/>
+          <!-- Copy gco:CharacterString unless empty and the main language translation has a value (case 2).
+               This occurs if previously was a multilingual property and the name is changed to a non multilingual property -->
+          <xsl:choose>
+            <xsl:when test="string(gco:CharacterString)">
+              <xsl:apply-templates select="gco:CharacterString"/>
+            </xsl:when>
+
+            <xsl:when test="string(gmd:PT_FreeText/*/gmd:LocalisedCharacterString[
+                                            @locale = concat('#', $mainLanguageId)]/text())">
+              <gco:CharacterString><xsl:value-of select="gmd:PT_FreeText/*/gmd:LocalisedCharacterString[
+                                            @locale = concat('#', $mainLanguageId)]/text()" /></gco:CharacterString>
+            </xsl:when>
+
+            <xsl:otherwise>
+              <xsl:apply-templates select="gco:CharacterString"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </xsl:when>
         <xsl:otherwise>
           <!-- Add xsi:type for multilingual element. -->

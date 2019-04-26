@@ -179,10 +179,11 @@
     <!-- In multilingual mode, define which mode
     the widget should have. If expanded, then one
     field per language is displayed. -->
-    <!--<expanded>
+    <expanded>
       <name>gmd:title</name>
       <name>gmd:abstract</name>
-    </expanded>-->
+      <name>bfs:legendTitle</name>
+    </expanded>
     <!-- All fields in ISO could be multilingual.
     Define element to exclude.
 

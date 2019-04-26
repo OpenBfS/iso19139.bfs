@@ -48,12 +48,16 @@
     <xsl:param name="searchStrings" as="xs:string*"/>
 
     <xsl:variable name="list" select="tokenize($arg, ',')" />
-    <xsl:sequence
-      select="
-            every $listValue in $list
-            satisfies exists($searchStrings[. = $listValue])
-            "
-    />
+
+    <xsl:choose>
+      <xsl:when test="count($list) = 0"><xsl:value-of select="false()"/></xsl:when>
+      <xsl:otherwise><xsl:sequence
+        select="
+                every $listValue in $list
+                satisfies exists($searchStrings[. = $listValue])
+                "
+      /></xsl:otherwise>
+    </xsl:choose>
   </xsl:function>
 
   <!-- Function to check if a property for bfs:olProperty is non multilingual -->

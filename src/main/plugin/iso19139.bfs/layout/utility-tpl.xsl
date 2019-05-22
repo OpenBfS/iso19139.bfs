@@ -30,4 +30,12 @@
     <xsl:call-template name="get-iso19139-extents-as-json">
     </xsl:call-template>
   </xsl:template>
+
+
+  <xsl:template name="get-iso1913.bfs-online-source-config">
+    <xsl:param name="pattern"/>
+    <xsl:call-template name="get-iso19139-online-source-config">
+      <xsl:with-param name="pattern" select="$pattern" />
+    </xsl:call-template>
+  </xsl:template>
 </xsl:stylesheet>

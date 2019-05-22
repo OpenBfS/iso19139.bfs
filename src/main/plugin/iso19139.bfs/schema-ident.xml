@@ -6,7 +6,7 @@
 	<name>iso19139.bfs</name>
 	<id>0c134cf0-a848-11e3-a5e2-8376200c9a66</id>
 	<version>1.0</version>
-        <appMinorVersionSupported>3.4.0</appMinorVersionSupported>
+  <appMinorVersionSupported>3.6.0</appMinorVersionSupported>
 	<depends>iso19139</depends>
 	<!-- Profile XSD location -->
 	<schemaLocation>http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd

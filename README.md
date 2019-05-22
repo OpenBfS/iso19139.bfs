@@ -6,8 +6,8 @@ This is the ISO19139 BfS Version 1.0 schema plugin for GeoNetwork 3.x or greater
 
 ### GeoNetwork version to use with this plugin
 
-Use GeoNetwork 3.2.0+ version.
-It'll not be supported in 2.10.x or 3.0.x series so don't plug it into it!
+Use GeoNetwork 3.6.0+ version.
+It'll not be supported in previous versions so don't plug it into it!
 
 ### Adding the plugin to the source code
 
@@ -15,7 +15,7 @@ The best approach is to add the plugin as a submodule into GeoNetwork schema mod
 
 ```
 cd schemas
-git submodule add -b 3.4.x https://github.com/OpenBfS/iso19139.bfs iso19139.bfs
+git submodule add -b master https://github.com/OpenBfS/iso19139.bfs iso19139.bfs
 ```
 
 Add the new module to the schema/pom.xml:

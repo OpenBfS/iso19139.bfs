@@ -90,6 +90,15 @@
     </dl>
   </xsl:template>
 
+  <xsl:template mode="render-field"
+                match="bfs:propertyValue"
+                priority="50">
+
+    <dd>
+      <xsl:value-of select="gco:CharacterString" />
+    </dd>
+  </xsl:template>
+
 
 
   <!-- Some elements are only containers so bypass them -->

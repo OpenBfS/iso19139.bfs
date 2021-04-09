@@ -402,6 +402,13 @@
       </tab>
 
       <!-- Elements that should not use the "flat" mode -->
+      <flatModeExceptions>
+        <for name="bfs:filter"/>
+        <for name="bfs:olProperty"/>
+        <for name="bfs:timeSeriesChartProperty"/>
+        <for name="bfs:barChartProperty" />
+      </flatModeExceptions>
+
       <!--<flatModeExceptions>
         <for name="bfs:defaultValue"/>
       </flatModeExceptions>-->

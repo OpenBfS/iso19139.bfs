@@ -90,17 +90,6 @@
     </dl>
   </xsl:template>
 
-  <xsl:template mode="render-field"
-                match="bfs:propertyValue"
-                priority="50">
-
-    <dd>
-      <xsl:value-of select="gco:CharacterString" />
-    </dd>
-  </xsl:template>
-
-
-
   <!-- Some elements are only containers so bypass them -->
   <xsl:template mode="render-field"
                 match="*[count(gmd:*) = 1]"
@@ -525,6 +514,13 @@
        gco:LocalName|gml:beginPosition|gml:endPosition">
 
     <xsl:choose>
+      <xsl:when test="contains(., 'a href=')">
+        <xsl:variable name="textWithLinks" select="." />
+        <xsl:copy-of select="saxon:parse(
+                          concat('&lt;p&gt;',
+                          replace($textWithLinks, '&amp;', '&amp;amp;'),
+                          '&lt;/p&gt;'))"/>
+      </xsl:when>
       <xsl:when test="contains(., 'http')">
         <!-- Replace hyperlink in text by an hyperlink -->
         <xsl:variable name="textWithLinks"

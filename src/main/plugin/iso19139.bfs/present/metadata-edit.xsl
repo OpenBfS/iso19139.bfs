@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gts="http://www.isotc211.org/2005/gts"
   xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmx="http://www.isotc211.org/2005/gmx"
-  xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml"
+  xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml/3.2"
   xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:geonet="http://www.fao.org/geonetwork"
   xmlns:exslt="http://exslt.org/common"
     xmlns:bfs="http://geonetwork.org/bfs"
@@ -312,7 +312,7 @@
     <xsl:param name="edit"/>
     <xsl:param name="dataset"/>
     <xsl:param name="core"/>
-    
+
     <!-\- Do something ... -\->
   </xsl:template>
 -->

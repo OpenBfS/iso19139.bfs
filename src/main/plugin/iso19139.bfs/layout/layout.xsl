@@ -3,7 +3,7 @@
   xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gts="http://www.isotc211.org/2005/gts"
   xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmx="http://www.isotc211.org/2005/gmx"
   xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:gn="http://www.fao.org/geonetwork"
   xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
   xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
@@ -27,7 +27,7 @@
 
 
   <!-- Template to display non existing element ie. geonet:child element
-    of the metadocument. Display in editing mode only and if 
+    of the metadocument. Display in editing mode only and if
   the editor mode is not flat mode. -->
   <xsl:template mode="mode-iso19139.bfs" match="gn:child" priority="2000">
     <xsl:param name="schema" select="$schema" required="no"/>
@@ -72,15 +72,15 @@
   </xsl:template>
 
   <!-- Boxed element
-    
+
       Details about the last line :
-      * namespace-uri(.) != $gnUri: Only take into account profile's element 
+      * namespace-uri(.) != $gnUri: Only take into account profile's element
       * and $isFlatMode = false(): In flat mode, don't box any
       * and gmd:*: Match all elements having gmd child elements
       * and not(gco:CharacterString): Don't take into account those having gco:CharacterString (eg. multilingual elements)
   -->
   <xsl:template mode="mode-iso19139.bfs" priority="200"
-    match="*[name() = $editorConfig/editor/fieldsWithFieldset/name 
+    match="*[name() = $editorConfig/editor/fieldsWithFieldset/name
     or @gco:isoType = $editorConfig/editor/fieldsWithFieldset/name]|
       gmd:report/*|
       gmd:result/*|
@@ -329,14 +329,14 @@
   </xsl:template>
 
   <!-- Match codelist values.
-  
-  eg. 
+
+  eg.
   <gmd:CI_RoleCode codeList="./resources/codeList.xml#CI_RoleCode" codeListValue="pointOfContact">
     <geonet:element ref="42" parent="41" uuid="gmd:CI_RoleCode_e75c8ec6-b994-4e98-b7c8-ecb48bda3725" min="1" max="1"/>
     <geonet:attribute name="codeList"/>
     <geonet:attribute name="codeListValue"/>
     <geonet:attribute name="codeSpace" add="true"/>
-  
+
   -->
   <xsl:template mode="mode-iso19139.bfs" priority="200" match="*[*/@codeList]">
     <xsl:param name="schema" select="$schema" required="no"/>
@@ -368,9 +368,9 @@
   </xsl:template>
 
 
-  <!-- 
+  <!--
     Take care of enumerations.
-    
+
     In the metadocument an enumeration provide the list of possible values:
   <gmd:topicCategory>
     <gmd:MD_TopicCategoryCode>

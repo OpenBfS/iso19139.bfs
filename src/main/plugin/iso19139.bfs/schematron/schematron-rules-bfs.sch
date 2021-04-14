@@ -3,7 +3,7 @@
             xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <sch:title xmlns="http://www.w3.org/2001/XMLSchema">Schematron validation / Bfs rules</sch:title>
-  <sch:ns prefix="gml" uri="http://www.opengis.net/gml"/>
+  <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
   <sch:ns prefix="gmd" uri="http://www.isotc211.org/2005/gmd"/>
   <sch:ns prefix="srv" uri="http://www.isotc211.org/2005/srv"/>
   <sch:ns prefix="gco" uri="http://www.isotc211.org/2005/gco"/>

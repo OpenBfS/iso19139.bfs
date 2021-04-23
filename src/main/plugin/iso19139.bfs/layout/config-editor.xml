@@ -169,6 +169,9 @@
     <name>bfs:MD_WMSLayerType</name>
     <name>bfs:MD_WMTSLayerType</name>
     <name>bfs:MD_VectorLayerType</name>
+    <name>bfs:MD_OSMLayerType</name>
+    <name>bfs:MD_WPSFeatureCollectionLayerType</name>
+    <name>bfs:MD_WPSImageLayerType</name>
     <name>bfs:date</name>
     <name>bfs:minDate</name>
     <name>bfs:maxDate</name>

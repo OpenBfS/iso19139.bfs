@@ -135,6 +135,25 @@
   </xsl:template>
 
 
+  <xsl:template mode="render-field"
+                match="bfs:post"
+                priority="100">
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <dl>
+      <dt>
+        <xsl:value-of select="if ($fieldName)
+                                then $fieldName
+                                else tr:nodeLabel(tr:create($schema), name(), null)"/>
+      </dt>
+      <dd>
+        <xsl:for-each select="gco:CharacterString/node()">
+          <pre><xsl:copy-of select="." /></pre>
+        </xsl:for-each>
+      </dd>
+    </dl>
+  </xsl:template>
+
   <!-- A contact is displayed with its role as header -->
   <xsl:template mode="render-field"
                 match="*[gmd:CI_ResponsibleParty]"

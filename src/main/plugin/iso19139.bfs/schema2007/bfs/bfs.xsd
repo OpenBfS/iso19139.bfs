@@ -228,6 +228,59 @@
   </xs:complexType>
 
   <!-- =========================================================================== -->
+  <!-- =========================== WPSFeatureCollection ========================== -->
+  <xs:complexType name="MD_WPSFeatureCollectionLayerType_Type">
+    <xs:annotation>
+      <xs:documentation>.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="bfs:MD_LayerType_Type">
+        <xs:sequence>
+          <xs:element ref="bfs:URL"/>
+          <xs:element name="post" type="gco:CharacterString_PropertyType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <!-- ........................................................................ -->
+  <xs:element name="MD_WPSFeatureCollectionLayerType" type="bfs:MD_WPSFeatureCollectionLayerType_Type" substitutionGroup="bfs:MD_LayerType"/>
+  <!-- ........................................................................ -->
+  <xs:complexType name="MD_WPSFeatureCollectionLayerType_PropertyType">
+    <xs:sequence minOccurs="1">
+      <xs:element ref="bfs:MD_WPSFeatureCollectionLayerType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="gco:ObjectReference"/>
+    <xs:attribute ref="gco:nilReason"/>
+  </xs:complexType>
+
+  <!-- =========================================================================== -->
+  <!-- ============================== WPSImageLayer ============================= -->
+  <xs:complexType name="MD_WPSImageLayerType_Type">
+    <xs:annotation>
+      <xs:documentation>.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="bfs:MD_LayerType_Type">
+        <xs:sequence>
+          <xs:element ref="bfs:URL"/>
+          <xs:element name="post" type="gco:CharacterString_PropertyType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <!-- ........................................................................ -->
+  <xs:element name="MD_WPSImageLayerType" type="bfs:MD_WPSImageLayerType_Type" substitutionGroup="bfs:MD_LayerType"/>
+  <!-- ........................................................................ -->
+  <xs:complexType name="MD_WPSImageLayerType_PropertyType">
+    <xs:sequence minOccurs="1">
+      <xs:element ref="bfs:MD_WPSImageLayerType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="gco:ObjectReference"/>
+    <xs:attribute ref="gco:nilReason"/>
+  </xs:complexType>
+
+
+  <!-- =========================================================================== -->
 	<!-- =================================== TMS =================================== -->
 	<!--<xs:complexType name="TMSLayerType_Type">
 		<xs:annotation>

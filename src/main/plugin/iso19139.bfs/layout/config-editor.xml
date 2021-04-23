@@ -110,7 +110,7 @@
     </for>
 
     <for name="bfs:value" use="textarea" />
-
+    <for name="bfs:post" use="textarea" />
   </fields>
 
 
@@ -281,6 +281,7 @@
       <name>bfs:defaultEndValue</name>
       <name>bfs:TimeFormat</name>
       <name>bfs:TimeInstant</name>
+      <name>bfs:post</name>
 
       <!-- Uncomment to make bfs:propertyValue from these ancestors non-multilingual -->
       <!--<name ancestor="bfs:barChartProperty">bfs:propertyValue</name>
